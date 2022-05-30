@@ -51,13 +51,13 @@
                     result[count++] = table[table.GetLength(0) - 1, i];
                 }
 
-                return result;
+                return result.Select(element => element * GamePrice).ToArray();
             }
         }
 
         public double GamePrice => 1 / table[table.GetLength(0) - 1, 0];
 
-        public double[] Result => _result;
+        public double[] Result => _result.Select(element => element * GamePrice).ToArray();
 
         public double[,] Calculate()
         {
